@@ -1,7 +1,11 @@
-import "./App.css"
+import Playground from "./components/playground/Playground"
 
 const App = () => {
-  return <div></div>
+  return (
+    <>
+      <Playground />
+    </>
+  )
 }
 
 export default App
