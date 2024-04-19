@@ -33,7 +33,9 @@
 
 4. Writing tests on Vitest
 
-5. Deploy to GitHub Pages
+5. Deploy to Netlify
+   
+6. Adding docs
 
 ### Import order
 
