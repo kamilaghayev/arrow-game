@@ -1,5 +1,5 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react"
-import type { TypeSetState } from "../../../types"
+import type { TypeSetState } from "../../types"
 
 export interface ControlsProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
