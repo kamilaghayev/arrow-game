@@ -6,7 +6,8 @@ import { END_GAME_CONDITIONS, INTERVAL_TIME } from "../../constants"
 import RandomKeys from "../randomKeys"
 import KeyPressed from "../keyPressed"
 import Score from "../score"
-import Modal from "../modal"
+import Modal from "../modalComponent"
+import { Grid, Typography } from "@mui/material"
 
 const Playground = () => {
   const dispatch = useAppDispatch()
@@ -50,15 +51,34 @@ const Playground = () => {
   }, [state.totalSuccesses, state.totalUnsuccesses])
 
   return (
-    <div>
-      {state.currentStep}
-      <Controls
-        isTimerActive={isTimerActive}
-        setIsTimerActive={setIsTimerActive}
-      />
-      <RandomKeys isTimerActive={isTimerActive} />
-      <KeyPressed isTimerActive={isTimerActive} />
-      <Score />
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        backgroundColor: "#ddead8",
+        borderRadius: "12px",
+        minHeight: "400px",
+      }}
+      p={4}
+    >
+      <Grid item md={6}>
+        <RandomKeys isTimerActive={isTimerActive} />
+        <KeyPressed isTimerActive={isTimerActive} />
+      </Grid>
+
+      <Grid item md={6}>
+        <Controls
+          isTimerActive={isTimerActive}
+          setIsTimerActive={setIsTimerActive}
+        />
+
+        <Typography variant="h6" paddingTop={2}>
+          Step: {state.currentStep}
+        </Typography>
+
+        <Score />
+      </Grid>
+
       {showModal && (
         <Modal
           isOpen={showModal}
@@ -66,7 +86,7 @@ const Playground = () => {
           isWinnedGame={isWinnedGame}
         />
       )}
-    </div>
+    </Grid>
   )
 }
 

@@ -14,7 +14,7 @@ const WelcomeText: FC<IWelcomeTextProps> = ({ isTimerActive }) => {
           appear'
         </Typography>
       ) : (
-        <CircularProgress />
+        <CircularProgress sx={{ height: "40px" }} />
       )}
     </span>
   )
